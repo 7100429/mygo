@@ -9,5 +9,5 @@ type MainController struct {
 }
 
 func (this *MainController) Get() {
-	this.Ctx.Output.Body([]byte("shorturl"))
+	this.Ctx.Output.Body([]byte("mytest"))
 }

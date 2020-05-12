@@ -26,10 +26,8 @@ type ShortController struct {
 func (this *ShortController) Get() {
 	var result ShortResult
 	longurl := this.Input().Get("longurl")
-	beego.Info(longurl)
 	result.UrlLong = longurl
 	urlmd5 := models.GetMD5(longurl)
-	beego.Info(urlmd5)
 	if urlcache.IsExist(urlmd5) {
 		result.UrlShort = urlcache.Get(urlmd5).(string)
 	} else {
