@@ -8,7 +8,7 @@
 package routers
 
 import (
-	"mygo/qyweixin/controllers"
+	"github_file/mygo/qyweixin/controllers"
 
 	"github.com/astaxie/beego"
 )

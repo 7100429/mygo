@@ -1,9 +1,9 @@
 package controllers
 
 import (
-	"fmt"
 	"github.com/astaxie/beego"
-	"mygo/qyweixin/models"
+	"github.com/astaxie/beego/logs"
+	"github_file/mygo/CommModel"
 )
 
 // Operations about object
@@ -22,11 +22,12 @@ func (o *StoreController) Get() {
 	key := id
 	haskey := "system_param:new"
 	data := make(map[string]interface{})
-	data["tesk_id"] = 1234
+	data["tesk_id"] = id
 	data["myinfo"] = "测试信息"
-	str := models.Strval(data)
-	models.RDSTools_HSetEx(key, haskey, str,3600)
-	re := models.RDSTools_HGetAll(haskey)
+	logs.Debug("获取信息")
+	str := commModels.Strval(data)
+	commModels.RDSTools_HSetEx(key, haskey, str,3600)
+	//re := models.RDSTools_HGetAll(haskey)
 	//if objectId != "" {
 	//	ob, err := models.GetOne(objectId)
 	//	if err != nil {
@@ -35,12 +36,12 @@ func (o *StoreController) Get() {
 	//		o.Data["json"] = ob
 	//	}
 	//}
-	var info []string
-	fmt.Println(models.Strval(re))
-	for _,v := range re.([]interface{}) {
-		models.GetName(v)
-	}
-	o.Data["json"] = info
+	//var info []string
+	//fmt.Println(models.Strval(re))
+	//for _,v := range re.([]interface{}) {
+	//	models.GetName(v)
+	//}
+	o.Data["json"] = str
 	o.ServeJSON()
 	//o.Ctx.WriteString(models.Strval(re))
 }

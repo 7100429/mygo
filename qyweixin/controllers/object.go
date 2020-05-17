@@ -1,7 +1,7 @@
 package controllers
 
 import (
-	"mygo/qyweixin/models"
+	"github_file/mygo/qyweixin/models"
 	"encoding/json"
 
 	"github.com/astaxie/beego"
