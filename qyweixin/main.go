@@ -1,7 +1,7 @@
 package main
 
 import (
-	_ "github_file/mygo/qyweixin/routers"
+	_ "mygo/qyweixin/routers"
 
 	"github.com/astaxie/beego"
 )

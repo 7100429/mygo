@@ -4,7 +4,7 @@ import (
 	"github.com/astaxie/beego"
 	_ "github.com/astaxie/beego/cache/redis"
 	"github.com/astaxie/beego/logs"
-	"github_file/mygo/CommModel/redis"
+	"mygo/CommModel/redis"
 )
 var RDSTools redistools.RedisDataStore
 func init() {

@@ -71,3 +71,9 @@ func GetName(params ... interface {}) string {
 	}
 	return strings.Join(stringSlice, "_")
 }
+
+func CheckErr(err error)  {
+	if err != nil{
+		panic(err)
+	}
+}
